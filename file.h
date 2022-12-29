@@ -2,6 +2,7 @@
 #define __FILE_H__
 
 #include <iostream>
+#include <memory>
 #include "filecontent.h"
 
 /**
@@ -11,14 +12,20 @@
  * 
 */
 
-class File {
+
+class File: public std::enable_shared_from_this<File> {
 protected:
+    std::string name;
     FileContent* fileContent;
     std::string type_identifier;
 
 public:
-    File(FileContent* fc, std::string ti);
+    File(std::string name, FileContent* fc, std::string ti);
     std::string get_type();
+    std::string get_name();
+    void rename(std::string new_name);
+
+    std::shared_ptr<File> get_ptr();
 
     std::string get_content();
 

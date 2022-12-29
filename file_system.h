@@ -14,6 +14,7 @@ class FileSystem {
 public:
     void addFile(shared_ptr<File> ptrFile);
     std::vector<shared_ptr<File>> getAtRange(int min, int max);
+    bool renameFile(std::string old_name, std::string new_name);
 };
 
 

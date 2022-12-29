@@ -19,3 +19,15 @@ std::vector<shared_ptr<File>> FileSystem::getAtRange(int min, int max){
     
     return nvector;
 }
+
+bool FileSystem::renameFile(std::string old_name, std::string new_name) {
+    for (shared_ptr<File> file: files){
+        if(file->get_name() == old_name){
+            std::shared_ptr<File> tempFile = file->get_ptr();
+            tempFile->rename(new_name);
+            return true;
+        }
+    }
+
+    return false;
+}

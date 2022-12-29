@@ -13,7 +13,7 @@ class Audio: public File {
     //type_identifier inherited
 
 public:
-    Audio(FileContent* fileContent, int duration);
+    Audio(std::string name, FileContent* fileContent, int duration);
     double get_size() override;
     void update() override;
 };

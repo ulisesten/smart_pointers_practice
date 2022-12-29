@@ -1,6 +1,6 @@
 #include "audio.h"
 
-Audio::Audio(FileContent* fileContent, int duration): File(fileContent, "AUD") {
+Audio::Audio(std::string name, FileContent* fileContent, int duration): File(name, fileContent, "AUD") {
 
     this->duration = duration;
     

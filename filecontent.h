@@ -10,6 +10,7 @@ class FileContent {
 public:
     FileContent(std::string content);
     std::string get_content();
+    
 
 };
 
